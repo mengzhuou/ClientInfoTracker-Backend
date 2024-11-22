@@ -1,0 +1,12 @@
+20240822	22:28:52	ca2be346-96d9-4263-9797-92fd8f38924b	Error: Not allowed by LMCFilm CORS	OPTIONS	/	https://calendar.google.com
+20240822	22:28:52	e25476b2-e2d9-4c68-8b55-0bb70b092689	Error: Not allowed by LMCFilm CORS	GET	/	https://calendar.google.com
+20240824	19:21:59	0565a9ef-bd2f-41af-b2f3-26b0d0955a4d	TypeError: Cannot destructure property 'name' of 'req.body' as it is undefined.	POST	/students	undefined
+20241120	12:26:30	388523ed-80ee-4322-995c-b417a8ec14e8	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "sadoih" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	12:34:00	7f27455f-9745-4e23-933e-fcd79bed1fc6	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "123-123-41231223123" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	15:47:52	aa2e5b4f-3d37-4dd3-815d-c30a7e98f346	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1111" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	15:50:15	009b2412-ab1c-41fc-8b3b-213911163d11	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1111" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	15:53:15	125bdaa6-3ac5-49c6-bda3-5644999c98ab	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1122" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	15:56:47	7945f7fe-fbc5-405b-a099-51d457bb6c25	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "222-222-2222" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	15:58:41	05813cc9-2449-4d7d-94fb-ad141b222901	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1111" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	16:00:31	0af1ce5f-55c1-40b2-84dd-98f01e998d37	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1111" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000
+20241120	16:01:12	c7c66252-dc03-4888-9176-35d415ec0b6d	ValidationError: Record validation failed: phoneNumber: Cast to Number failed for value "111-111-1111" (type string) at path "phoneNumber"	POST	/records	http://localhost:3000

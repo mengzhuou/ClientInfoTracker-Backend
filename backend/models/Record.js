@@ -18,7 +18,7 @@ const recordSchema = new mongoose.Schema({
         {
             importantDate: {
                 type: Date,
-                required: true,
+                required: false,
             },
             note: {
                 type: String,

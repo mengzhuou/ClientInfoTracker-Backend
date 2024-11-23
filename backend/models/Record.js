@@ -14,14 +14,18 @@ const recordSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    importantDate: {
-        type: Date,
-        required: false
-    },
-    note: {
-        type: String,
-        required: false
-    },
+    importantDatesAndNotes: [
+        {
+            importantDate: {
+                type: Date,
+                required: true,
+            },
+            note: {
+                type: String,
+                required: false,
+            },
+        },
+    ],
     familySituation: {
         type: String,
         required: false

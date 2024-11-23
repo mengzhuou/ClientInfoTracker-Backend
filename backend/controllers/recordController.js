@@ -21,16 +21,26 @@ const getDrafts = asyncHandler(async (req, res) => {
 // @route POST /Records
 // @access Private
 const createRecord = asyncHandler(async (req, res) => {
-    const { name, company, hobby, importantDate, note, familySituation,
-        birthday, reasonOfKnowing, position, phoneNumber, email,
-        additionalNote, draftStatus } = req.body;
+    const {
+        name,
+        company,
+        hobby,
+        importantDatesAndNotes, 
+        familySituation,
+        birthday,
+        reasonOfKnowing,
+        position,
+        phoneNumber,
+        email,
+        additionalNote,
+        draftStatus
+    } = req.body;
 
     const newRecord = new Record({
         name,
         company,
         hobby,
-        importantDate,
-        note,
+        importantDatesAndNotes,
         familySituation,
         birthday,
         reasonOfKnowing,
@@ -64,20 +74,45 @@ const deleteRecord = asyncHandler(async (req, res) => {
 // @access Private
 const updateRecord = asyncHandler(async (req, res) => {
     const recordId = req.params.id;
-    const updates = req.body;
+    const {
+        name,
+        company,
+        hobby,
+        importantDatesAndNotes, // Expecting an updated array of objects
+        familySituation,
+        birthday,
+        reasonOfKnowing,
+        position,
+        phoneNumber,
+        email,
+        additionalNote,
+        draftStatus
+    } = req.body;
 
-    // Find and update the record, returning the updated document
-    const record = await Record.findByIdAndUpdate(recordId, updates, {
-        new: true, // Return the updated record instead of the old one
-        runValidators: true, // Ensure validation rules in the schema are applied
-    });
+    const record = await Record.findById(recordId);
 
     if (!record) {
         res.status(404);
         throw new Error('Record not found');
     }
 
-    res.status(200).json(record); // Send the updated record back as the response
+    // Update fields
+    record.name = name || record.name;
+    record.company = company || record.company;
+    record.hobby = hobby || record.hobby;
+    record.importantDatesAndNotes = importantDatesAndNotes || record.importantDatesAndNotes;
+    record.familySituation = familySituation || record.familySituation;
+    record.birthday = birthday || record.birthday;
+    record.reasonOfKnowing = reasonOfKnowing || record.reasonOfKnowing;
+    record.position = position || record.position;
+    record.phoneNumber = phoneNumber || record.phoneNumber;
+    record.email = email || record.email;
+    record.additionalNote = additionalNote || record.additionalNote;
+    record.draftStatus = draftStatus !== undefined ? draftStatus : record.draftStatus;
+
+    const updatedRecord = await record.save();
+    res.status(200).json(updatedRecord);
 });
+
 
 module.exports = { getRecords, createRecord, getDrafts, deleteRecord, updateRecord };

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const recordSchema = new mongoose.Schema({
-    //company, name, hobby, importantDate, note, additionalNote, family, birthday, reasonOfKnowing, email, position, phoneNumber
     name: {
         type: String,
         required: true
@@ -12,7 +11,7 @@ const recordSchema = new mongoose.Schema({
     },
     hobby: {
         type: String,
-        required: true
+        required: false
     },
     importantDatesAndNotes: [
         {

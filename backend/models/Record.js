@@ -23,6 +23,11 @@ const recordSchema = new mongoose.Schema({
                 type: String,
                 required: false,
             },
+            isOnlyMonth: {
+                type: Boolean,
+                required: true, 
+                default: false,
+            },
         },
     ],
     familySituation: {

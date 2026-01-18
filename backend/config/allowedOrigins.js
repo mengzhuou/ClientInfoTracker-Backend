@@ -2,7 +2,8 @@
 const allowedOrigins = [
     'http://localhost:3000',
     'https://zwj-info-tracker-backend-cd756f069f6f.herokuapp.com',
-    'https://zwj-info-tracker.netlify.app'
+    'https://zwj-info-tracker.netlify.app',
+    'https://clientinfotracker-backend.onrender.com'
 ]
 
 module.exports = allowedOrigins
